@@ -1,4 +1,4 @@
-"""Module providing a function default dict."""
+"""Module providing basic examples for programming in python."""
 
 import collections
 
