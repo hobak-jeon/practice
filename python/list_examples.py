@@ -1,9 +1,12 @@
 """Module providing list examples for Python programming."""
 
+from functools import reduce
+
 integers = [1, 2, 5, 4, 7, 3]
 chars = ["u", "a", "e", "c", "k", "i"]
 estern_langs = ["Korean", "Japanese", "Chinese"]
 western_langs = ("English", "German", "Spanish")
+langs = estern_langs + list(western_langs)
 
 # Make new lists.
 new_integers_1 = integers[::]
@@ -59,3 +62,8 @@ integers.append(6)
 
 # Remove and return item at index (default last) in place.
 integers.pop()
+
+
+# Sort items of list in place.
+langs.sort()
+langs.sort(key=len, reverse=False)
