@@ -1,20 +1,19 @@
 """Module providing list examples for Python programming."""
 
-from functools import reduce
+import copy
 
 integers = [1, 2, 5, 4, 7, 3]
 chars = ["u", "a", "e", "c", "k", "i"]
 estern_langs = ["Korean", "Japanese", "Chinese"]
 western_langs = ("English", "German", "Spanish")
 langs = estern_langs + list(western_langs)
-
-# Make new lists.
 new_integers_1 = integers[::]
 new_integers_2 = integers[::]
 new_integers_3 = integers[::]
 new_integers_4 = integers[::]
 new_integers_5 = integers[::]
 new_integers_6 = integers[::]
+
 
 # Concatenate lists.
 duplicates = chars * 3 + integers + chars + estern_langs + list(western_langs)
@@ -57,13 +56,34 @@ integers += [4]
 # Operator "+" creates a new list.
 integers = integers + [5]
 
-# Work in place and returns "None".
-integers.append(6)
-
-# Remove and return item at index (default last) in place.
-integers.pop()
-
 
 # Sort items of list in place.
 langs.sort()
 langs.sort(key=len, reverse=False)
+
+
+# Shallow and deep copy operations.
+org_integers_for_shallow_copy = [[0], 1]
+org_integers_for_deep_copy = [[4], 5]
+
+# Shallow copy.
+integers_by_shallow_copy_1 = org_integers_for_shallow_copy.copy()
+integers_by_shallow_copy_2 = org_integers_for_shallow_copy.copy()
+
+integers_by_shallow_copy_1[0][0] = (
+    2  # integers_by_shallow_copy_1 = [[2], 1], org_integers_for_shallow_copy = [[2], 1]
+)
+integers_by_shallow_copy_2[1] = (
+    3  # integers_by_shallow_copy_2 = [[2], 3], org_integers_for_shallow_copy = [[2], 1]
+)
+
+# Deep copy.
+integers_by_deep_copy_1 = copy.deepcopy(org_integers_for_deep_copy)
+integers_by_deep_copy_2 = copy.deepcopy(org_integers_for_deep_copy)
+
+integers_by_deep_copy_1[0][0] = (
+    6  # integers_by_deep_copy_1 = [[6], 5], org_integers_for_deep_copy = [[4], 5]
+)
+integers_by_deep_copy_2[1] = (
+    7  # integers_by_deep_copy_2 = [[4], 7], org_integers_for_deep_copy = [[4], 5]
+)
