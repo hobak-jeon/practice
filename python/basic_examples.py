@@ -42,36 +42,6 @@ _, b = range(2)
 print(b)  # 1
 
 
-# Arguments usage.
-def positional_arguments(i, j, *args):
-    """0. Function providing an example for positional arguments (*args)."""
-    print(i, j)  # 1 2
-    print(args)  # (3, 4, 5)
-
-
-def keyword_arguments(q, r, **kwargs):
-    """1. Function providing an example for keyword arguments (**kwargs)."""
-    print(q, r)
-    print(kwargs)
-
-
-def keyword_only_arguments(m, n, *, o, p=10):
-    """2. Function providing an example for keyword-only arguments (*)."""
-    # Arguments must be passed as keyword arguments after "*".
-    print(m, n, o, p)
-
-
-positional_arguments(1, 2, 3, 4, 5)  # Deliver a tuple (*args = (3, 4, 5)) to function.
-
-keyword_arguments(
-    7, 8, x=100, y=200
-)  # Deliver a dictionary ({'x': 100, 'y': 200}) to function.
-
-keyword_only_arguments(1, 2, o=3)  # 1 2 3 10
-keyword_only_arguments(3, 4, o=5, p=11)  # 3 4 5 11
-# list.sort(*, key=None, reverse=False)
-
-
 # Differences between 'is' and  '=='.
 # The 'is' operator in Python is used to check if two variables point to the same object.
 # Unlike the '==' operator, which checks if the values of two objects are equal.
