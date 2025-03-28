@@ -56,10 +56,16 @@ def keyword_arguments(q, r, **kwargs):
 
 def keyword_only_arguments(m, n, *, o, p=10):
     """2. Function providing an example for keyword-only arguments (*)."""
+    # Arguments must be passed as keyword arguments after "*".
     print(m, n, o, p)
 
 
-positional_arguments(1, 2, 3, 4, 5)
+positional_arguments(1, 2, 3, 4, 5)  # Deliver a tuple (*args = (3, 4, 5)) to function.
+
+keyword_arguments(
+    7, 8, x=100, y=200
+)  # Deliver a dictionary ({'x': 100, 'y': 200}) to function.
+
 keyword_only_arguments(1, 2, o=3)  # 1 2 3 10
 keyword_only_arguments(3, 4, o=5, p=11)  # 3 4 5 11
-list.sort(key=len, reverse=False)  # list.sort(*, key=None, reverse=False)
+# list.sort(*, key=None, reverse=False)
