@@ -38,4 +38,28 @@ else:
     print("Finally finished!")
 
 _, b = range(2)
-print(b)
+print(b)  # 1
+
+
+# Arguments usage.
+def positional_arguments(i, j, *args):
+    """0. Function providing an example for positional arguments (*args)."""
+    print(i, j)  # 1 2
+    print(args)  # (3, 4, 5)
+
+
+def keyword_arguments(q, r, **kwargs):
+    """1. Function providing an example for keyword arguments (**kwargs)."""
+    print(q, r)
+    print(kwargs)
+
+
+def keyword_only_arguments(m, n, *, o, p=10):
+    """2. Function providing an example for keyword-only arguments (*)."""
+    print(m, n, o, p)
+
+
+positional_arguments(1, 2, 3, 4, 5)
+keyword_only_arguments(1, 2, o=3)  # 1 2 3 10
+keyword_only_arguments(3, 4, o=5, p=11)  # 3 4 5 11
+list.sort(key=len, reverse=False)  # list.sort(*, key=None, reverse=False)
