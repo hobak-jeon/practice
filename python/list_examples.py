@@ -111,3 +111,7 @@ integers_by_deep_copy_1[0][0] = (
 integers_by_deep_copy_2[1] = (
     7  # integers_by_deep_copy_2 = [[4], 7], org_integers_for_deep_copy = [[4], 5]
 )
+
+# Remove duplicates from list.
+# dict.fromkeys() is much faster than using for looping.
+non_duplicated_list = list(dict.fromkeys(duplicates))  # O(n) x O(1)
