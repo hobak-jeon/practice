@@ -4,9 +4,9 @@ import copy
 
 integers = [1, 2, 5, 4, 7, 3]
 chars = ["u", "a", "e", "c", "k", "i"]
-estern_langs = ["Korean", "Japanese", "Chinese"]
+eastern_langs = ["Korean", "Japanese", "Chinese"]
 western_langs = ("English", "German", "Spanish")
-langs = estern_langs + list(western_langs)
+langs = eastern_langs + list(western_langs)
 new_integers_1 = integers[::]
 new_integers_2 = integers[::]
 new_integers_3 = integers[::]
@@ -16,7 +16,7 @@ new_integers_6 = integers[::]
 
 
 # Concatenate lists.
-duplicates = chars * 3 + integers + chars + estern_langs + list(western_langs)
+duplicates = chars * 3 + integers + chars + eastern_langs + list(western_langs)
 
 # Append object to the end of the list.
 integers.append(1)  # [1, 2, 5, 4, 7, 3, 1]
@@ -42,12 +42,31 @@ del new_integers_2[:]
 # Assign a new empty list to a variable.
 new_integers_3 = []
 
-# Make the list empty in place.
+# Make a list empty in place.
 new_integers_4[:] = []
 
 # Clear item(s) in place.
 new_integers_5 *= 0
 
+
+# Reverse a list.
+integers.reverse()  # Reverse a list in place.
+reversed_integers = list(
+    reversed(integers)
+)  # reversed() returns a new reversed iterator.
+
+
+# list.index(item[, start[, end]])
+# Return first index of value from list.
+# Raises a ValueError if there is no such item.
+# A function such as str.find() is not supported in list.
+print(f"integers = {integers}")
+if 3 not in integers:  # [3, 7, 4, 5, 2]
+    print("3 is not in integers.")
+else:
+    print(f"3's index = {integers.index(3)}")
+
+# integers.index("3", 1) # ValueError: '3' is not in integers[1:].
 
 # The differences between "+=" and "+".
 # Operator "+=" works in place for mutable objects like "list", "dict", "set".
@@ -60,6 +79,11 @@ integers = integers + [5]
 # Sort items of list in place.
 langs.sort()
 langs.sort(key=len, reverse=False)
+
+# Return a new sorted list from the items in iterable.
+sorted_eastern_langs = sorted(eastern_langs)
+sorted_western_langs = sorted(western_langs, key=len, reverse=True)
+print(sorted("This is a test string from Andrew".lower().split(), key=len))
 
 
 # Shallow and deep copy operations.
