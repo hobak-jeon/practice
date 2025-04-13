@@ -2,6 +2,10 @@
 
 from collections import defaultdict
 
+# An item in dict consists of a key-value pair.
+# dict = {item, item, ... , item}
+# dict = {key: value, key: value, ... , key: value}
+
 coordinate_xy: dict[str, int] = dict(x=10, y=11)
 alphanumeric_code: dict[
     str, int | None
